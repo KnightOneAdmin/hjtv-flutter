@@ -49,6 +49,10 @@ dependencies:
   flutter_easyrefresh: ^2.2.1
   # https://pub.dev/packages/rxdart
   rxdart: ^0.27.1
+  extended_image: ^4.1.0
+
+  flutter_localizations:
+    sdk: flutter #国际化组件
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +68,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
