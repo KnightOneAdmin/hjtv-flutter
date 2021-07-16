@@ -1,4 +1,4 @@
-package com.knight.hjtv_flutter
+package com.knight.hjtv
 
 import io.flutter.embedding.android.FlutterActivity
 
