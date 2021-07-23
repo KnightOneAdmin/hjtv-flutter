@@ -38,7 +38,7 @@ dependencies:
   #键盘处理
   flutter_keyboard_visibility: ^5.0.2
   #https://github.com/kokohuang/flutter_easyloading
-  flutter_easyloading: ^ 3.0.0
+  flutter_easyloading: ^3.0.0
   # 网络库 https://github.com/flutterchina/dio
   dio: ^4.0.0
   # 全家桶 https://github.com/jonataslaw/getx

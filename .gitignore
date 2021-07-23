@@ -6,5 +6,4 @@ build/
 .dart_tool/
 hjtv_flutter.iml/
 pubspec.lock
-.metadata
 .packages
