@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'find_logic.dart';
 import 'find_state.dart';
 
-class findPage extends StatefulWidget {
+class FindPage extends StatefulWidget {
   @override
-  _findPageState createState() => _findPageState();
+  _FindPageState createState() => _FindPageState();
 }
 
-class _findPageState extends State<findPage> {
-  final logic = Get.find<findLogic>();
-  final findState state = Get.find<findLogic>().state;
+class _FindPageState extends State<FindPage> {
+  final logic = Get.find<FindLogic>();
+  final FindState state = Get.find<FindLogic>().state;
 
   @override
     Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _findPageState extends State<findPage> {
 
   @override
   void dispose() {
-    Get.delete<findLogic>();
+    Get.delete<FindLogic>();
     super.dispose();
   }
 }

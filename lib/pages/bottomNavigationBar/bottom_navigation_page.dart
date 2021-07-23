@@ -22,7 +22,7 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
   late List<BottomNavigationBarItem> items;
 
   ///pages
-  List<Widget> pages = [homePage(), Container(), Container()];
+  List<Widget> pages = [HomePage(), Container(), Container()];
 
   ///item信息  map - > {'imageName',"selectedImageName",'title'}
   List<Map<String, String>> itemInfos = [
@@ -84,10 +84,10 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
                   if (w.runtimeType.toString() == 'Container') {
                     if (index == 1) {
                       pages.removeAt(index);
-                      pages.insert(index, findPage());
+                      pages.insert(index, FindPage());
                     } else if (index == 2) {
                       pages.removeAt(index);
-                      pages.insert(index, dramaPage());
+                      pages.insert(index, DramaPage());
                     }
                   }
                   if (currentIndex != index) {

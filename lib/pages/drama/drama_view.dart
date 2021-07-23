@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'drama_logic.dart';
 import 'drama_state.dart';
 
-class dramaPage extends StatefulWidget {
+class DramaPage extends StatefulWidget {
   @override
-  _dramaPageState createState() => _dramaPageState();
+  _DramaPageState createState() => _DramaPageState();
 }
 
-class _dramaPageState extends State<dramaPage> {
-  final logic = Get.find<dramaLogic>();
-  final dramaState state = Get.find<dramaLogic>().state;
+class _DramaPageState extends State<DramaPage> {
+  final logic = Get.find<DramaLogic>();
+  final DramaState state = Get.find<DramaLogic>().state;
 
   @override
     Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _dramaPageState extends State<dramaPage> {
 
   @override
   void dispose() {
-    Get.delete<dramaLogic>();
+    Get.delete<DramaLogic>();
     super.dispose();
   }
 }

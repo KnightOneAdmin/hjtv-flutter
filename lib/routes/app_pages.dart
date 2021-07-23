@@ -15,8 +15,8 @@ abstract class AppPages {
     ),
     GetPage(
         name: Routes.SPLASH,
-        page: () => splashPage(),
+        page: () => SplashPage(),
         transition: Transition.fade,
-        binding: splashBinding()),
+        binding: SplashBinding()),
   ];
 }

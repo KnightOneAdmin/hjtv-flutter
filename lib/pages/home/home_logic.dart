@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import 'home_state.dart';
 
-class homeLogic extends GetxController {
-  final state = homeState();
+class HomeLogic extends GetxController {
+  final state = HomeState();
 
   @override
   void onReady() {

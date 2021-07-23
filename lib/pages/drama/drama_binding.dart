@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 
 import 'drama_logic.dart';
 
-class dramaBinding extends Bindings {
+class DramaBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => dramaLogic());
+    Get.lazyPut(() => DramaLogic());
   }
 }

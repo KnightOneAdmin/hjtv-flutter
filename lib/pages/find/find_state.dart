@@ -1,5 +1,5 @@
-class findState {
-  findState() {
+class FindState {
+  FindState() {
     ///Initialize variables
   }
 }

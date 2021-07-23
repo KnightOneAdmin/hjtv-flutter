@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import 'find_state.dart';
 
-class findLogic extends GetxController {
-  final state = findState();
+class FindLogic extends GetxController {
+  final state = FindState();
 
   @override
   void onReady() {

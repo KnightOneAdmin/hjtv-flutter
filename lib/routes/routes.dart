@@ -1,5 +1,4 @@
 
-import 'package:flustars/flustars.dart';
 import 'package:get/get.dart';
 
 abstract class Routes{

@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'home_logic.dart';
 import 'home_state.dart';
 
-class homePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _homePageState createState() => _homePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
-  final logic = Get.find<homeLogic>();
-  final homeState state = Get.find<homeLogic>().state;
+class _HomePageState extends State<HomePage> {
+  final logic = Get.find<HomeLogic>();
+  final HomeState state = Get.find<HomeLogic>().state;
 
   @override
     Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _homePageState extends State<homePage> {
 
   @override
   void dispose() {
-    Get.delete<homeLogic>();
+    Get.delete<HomeLogic>();
     super.dispose();
   }
 }

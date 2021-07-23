@@ -1,5 +1,5 @@
-class dramaState {
-  dramaState() {
+class DramaState {
+  DramaState() {
     ///Initialize variables
   }
 }

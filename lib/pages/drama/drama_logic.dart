@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import 'drama_state.dart';
 
-class dramaLogic extends GetxController {
-  final state = dramaState();
+class DramaLogic extends GetxController {
+  final state = DramaState();
 
   @override
   void onReady() {

@@ -2,16 +2,18 @@ import 'package:get/get.dart';
 
 import 'splash_state.dart';
 
-class splashLogic extends GetxController {
-  final state = splashState();
+class SplashLogic extends GetxController {
+  final state = SplashState();
 
   @override
   void onReady() {
+    // TODO: implement onReady
     super.onReady();
   }
 
   @override
   void onClose() {
+    // TODO: implement onClose
     super.onClose();
   }
 }

@@ -1,20 +1,15 @@
 
 import 'dart:io';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hjtv_flutter/analytics/analytics.dart';
-import 'package:hjtv_flutter/routes/routes.dart';
 import 'package:path_provider/path_provider.dart';
-import 'dart:ui' as ui;
-import 'package:permission_handler/permission_handler.dart';
-
-import 'log_utils.dart';
 
 Image ImageUtils(String imageName,{String format:'png',double? width,double? height,BoxFit fit = BoxFit.fill,Color? color}){
 
