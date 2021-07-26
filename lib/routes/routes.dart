@@ -5,6 +5,10 @@ abstract class Routes{
 
   static const String BOTTOM_NAVIGATION = "/bottomNavigation";
   static const String SPLASH = "/splash";
+  static const String HOME = "/home";
+  static const String FIND = "/find";
+  static const String DRAMA = "/drama";
+
   static get arguments => Get.arguments;
 
   static Future<T?>? toNamed<T>(

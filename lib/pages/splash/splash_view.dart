@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hjtv_flutter/theme/theme_controller.dart';
 
 import 'splash_logic.dart';
 import 'splash_state.dart';
@@ -15,7 +16,14 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
     Widget build(BuildContext context) {
-      return Container();
+      return GetBuilder<ThemeController>(
+        builder: (_) => Scaffold(
+          body: Text(
+            '我是Splash页',
+            style: TextStyle(fontSize: 30.0),
+          ),
+        ),
+      );
     }
 
   @override

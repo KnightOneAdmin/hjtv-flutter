@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hjtv_flutter/theme/theme_controller.dart';
 
 import 'find_logic.dart';
 import 'find_state.dart';
@@ -15,7 +16,14 @@ class _FindPageState extends State<FindPage> {
 
   @override
     Widget build(BuildContext context) {
-      return Container();
+      return GetBuilder<ThemeController>(
+        builder: (_) => Scaffold(
+          body: Text(
+            '我是Find页',
+            style: TextStyle(fontSize: 30.0),
+          ),
+        ),
+      );
     }
 
   @override

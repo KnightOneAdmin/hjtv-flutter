@@ -18,6 +18,9 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationSate extends State<BottomNavigationPage> {
   int currentIndex = 0;
 
+  // var logic = Get.put(BottomNavigationController());
+  // var state = Get.find<BottomNavigationController>().state;
+
   ///items
   late List<BottomNavigationBarItem> items;
 
@@ -67,6 +70,26 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
 
   @override
   Widget build(BuildContext context) {
+    // return GetBuilder<ThemeController>(
+    //   builder: (_) => Scaffold(
+    //     bottomNavigationBar: Obx(() => BottomNavigationBar(
+    //         items: _items,
+    //         currentIndex: state.selectedIndex.value,
+    //         type: BottomNavigationBarType.fixed,
+    //         selectedItemColor: Colours.app_main,
+    //         unselectedItemColor: ThemeUtils.inactiveColor,
+    //         onTap: (index) => {
+    //           logic.changeIndex(index),
+    //           state.pageController.jumpToPage(index)
+    //         },
+    //     )),
+    //     body: PageView(
+    //       controller: state.pageController,
+    //       children: state.pageList,
+    //       onPageChanged: onPageChanged,
+    //     ),
+    //   ),
+    // );
     return GetBuilder<ThemeController>(
         builder: (_) => Scaffold(
               body: IndexedStack(
@@ -102,5 +125,9 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
               floatingActionButtonLocation:
                   FloatingActionButtonLocation.centerDocked,
             ));
+  }
+
+  void onPageChanged(int index) {
+    print(index);
   }
 }
