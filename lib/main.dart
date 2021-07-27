@@ -27,7 +27,7 @@ Future<Null> main() async {
 
   //初始化日志系统
   Log.init();
-
+  await SpUtil.getInstance();
   SystemChrome.setPreferredOrientations(
           [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((value) => runApp(MyApp()));
