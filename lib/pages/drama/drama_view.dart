@@ -11,8 +11,7 @@ class DramaPage extends StatefulWidget {
 }
 
 class _DramaPageState extends State<DramaPage> {
-  final logic = Get.find<DramaLogic>();
-  final DramaState state = Get.find<DramaLogic>().state;
+  final controller = Get.put(DramaLogic);
 
   @override
     Widget build(BuildContext context) {

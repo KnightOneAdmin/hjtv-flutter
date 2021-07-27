@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:hjtv_flutter/analytics/analytics.dart';
 import 'package:hjtv_flutter/common/Constants.dart';
 import 'package:hjtv_flutter/pages/bottomNavigationBar/bottom_navigation_state.dart';
+import 'package:hjtv_flutter/pages/drama/drama_logic.dart';
+import 'package:hjtv_flutter/pages/find/find_logic.dart';
+import 'package:hjtv_flutter/pages/home/home_logic.dart';
 import 'package:hjtv_flutter/utils/dart_notification_center.dart';
 
 class BottomNavigationController extends GetxController {
@@ -27,15 +30,11 @@ class BottomNavigationController extends GetxController {
   if(_currentIndex == 0){
    DartNotificationCenter.post(channel: Constants.kUpdateGiveBookStatus);
   }
-  //update();
+  update();
  }
  get currentIndex=>_currentIndex;
 
  BottomNavigationState state = BottomNavigationState();
-
- changeIndex(int index) {
-  state.selectedIndex.value = index;
- }
 
   @override
   void onInit() {
@@ -45,9 +44,9 @@ class BottomNavigationController extends GetxController {
 
  @override
   void onClose() {
-    // Get.delete<HomeController>();
-    // Get.delete<YellowPagesController>();
-    // Get.delete<InformationController>();
+    Get.delete<HomeLogic>();
+    Get.delete<FindLogic>();
+    Get.delete<DramaLogic>();
     super.onClose();
   }
 }

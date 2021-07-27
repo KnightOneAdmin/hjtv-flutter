@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hjtv_flutter/theme/theme_controller.dart';
+import 'package:hjtv_flutter/pages/home/home_logic.dart';
 
-import 'home_logic.dart';
-import 'home_state.dart';
+import 'package:hjtv_flutter/theme/theme_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,8 +17,7 @@ class TabTitle {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
-  final logic = Get.find<HomeLogic>();
-  final HomeState state = Get.find<HomeLogic>().state;
+  final controller = Get.put(HomeLogic());
 
   late TabController _tabController;
   late PageController _pageController;
@@ -90,7 +88,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
   @override
   void dispose() {
-    Get.delete<HomeLogic>();
     _pageController.dispose();
     _tabController.dispose();
     super.dispose();
