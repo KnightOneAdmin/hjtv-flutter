@@ -54,36 +54,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
   @override
     Widget build(BuildContext context) {
-      return GetBuilder<ThemeController>(
-        builder: (_) => Scaffold(
-          body: Text(
-            '我是Home页',
-            style: TextStyle(fontSize: 30.0),
-          ),
-        ),
+      return GetBuilder<HomeLogic>(
+          builder: (logic) => Scaffold(
+            body: Column(
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  height: 45,
+                  child: TabBar(
+                    labelColor: Colors.pinkAccent,
+                    labelStyle: TextStyle(color: Colors.white, fontSize: 16),
+                    unselectedLabelColor: Colors.blue,
+                    unselectedLabelStyle: TextStyle(color: Colors.purple, fontSize: 14),
+                    isScrollable: false,
+                    controller: _tabController,
+                    onTap: _changeTab,
+                    tabs: _tabList.map((e) => Tab(text: e.title)).toList(),
+                  ),
+                )
+              ],
+            ),
+          )
       );
-      // return GetBuilder<HomeLogic>(
-      //     builder: (logic) => Scaffold(
-      //       body: Column(
-      //         children: <Widget>[
-      //           Container(
-      //             width: double.infinity,
-      //             height: 45,
-      //             child: TabBar(
-      //               labelColor: Colors.pinkAccent,
-      //               labelStyle: TextStyle(color: Colors.white, fontSize: 16),
-      //               unselectedLabelColor: Colors.blue,
-      //               unselectedLabelStyle: TextStyle(color: Colors.purple, fontSize: 14),
-      //               isScrollable: false,
-      //               controller: _tabController,
-      //               onTap: _changeTab,
-      //               tabs: _tabList.map((e) => Tab(text: e.title)).toList(),
-      //             ),
-      //           )
-      //         ],
-      //       ),
-      //     )
-      // );
     }
 
   @override

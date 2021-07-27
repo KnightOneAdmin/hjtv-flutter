@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hjtv_flutter/theme/theme_controller.dart';
-
 import 'drama_logic.dart';
-import 'drama_state.dart';
 
 class DramaPage extends StatefulWidget {
   @override
