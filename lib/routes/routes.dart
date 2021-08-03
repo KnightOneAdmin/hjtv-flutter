@@ -8,6 +8,7 @@ abstract class Routes{
   static const String HOME = "/home";
   static const String FIND = "/find";
   static const String DRAMA = "/drama";
+  static const String MOVIE_DETAIS = "/movie_detais";
 
   static get arguments => Get.arguments;
 

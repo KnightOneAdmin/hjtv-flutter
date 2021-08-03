@@ -8,6 +8,7 @@ import 'package:hjtv_flutter/pages/home/home_view.dart';
 import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';
 import 'package:hjtv_flutter/utils/image_utils.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bottom_navigation_controller.dart';
 
@@ -30,18 +31,18 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
   ///item信息  map - > {'imageName',"selectedImageName",'title'}
   List<Map<String, String>> itemInfos = [
     {
-      'imageName': 'bottom_bar_ypage',
-      'selectedImageName': 'bottom_bar_ypage_selected',
+      'imageName': 'bottom_bar_home',
+      'selectedImageName': 'bottom_bar_home_selected',
       'title': '首页',
     },
     {
-      'imageName': 'bottom_bar_business',
-      'selectedImageName': 'bottom_bar_business_selected',
+      'imageName': 'bottom_bar_find',
+      'selectedImageName': 'bottom_bar_find_selected',
       'title': '发现',
     },
     {
-      'imageName': 'bottom_bar_information',
-      'selectedImageName': 'bottom_bar_information_selected',
+      'imageName': 'bottom_bar_mine',
+      'selectedImageName': 'bottom_bar_mine_selected',
       'title': '追剧',
     }
   ];
@@ -53,9 +54,9 @@ class _BottomNavigationSate extends State<BottomNavigationPage> {
     items = itemInfos.map((itemInfo) {
       return BottomNavigationBarItem(
         icon: ImageUtils(itemInfo['imageName']!,
-            width: 25, height: 25, fit: BoxFit.cover),
+            width: 22.w, height: 22.w, fit: BoxFit.cover),
         activeIcon: ImageUtils(itemInfo['selectedImageName']!,
-            width: 25, height: 25, fit: BoxFit.cover),
+            width: 22.w, height: 22.w, fit: BoxFit.cover),
         label: itemInfo['title'],
       );
     }).toList();

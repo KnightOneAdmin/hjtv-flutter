@@ -15,10 +15,11 @@ class _FindPageState extends State<FindPage> {
   Widget build(BuildContext context) {
     return GetBuilder<ThemeController>(
       builder: (_) => Scaffold(
-        body: Text(
+        body: Center(
+            child: Text(
           '我是Find页',
           style: TextStyle(fontSize: 30.0),
-        ),
+        )),
       ),
     );
   }

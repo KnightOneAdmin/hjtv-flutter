@@ -12,16 +12,17 @@ class _DramaPageState extends State<DramaPage> {
   final controller = Get.put(DramaLogic);
 
   @override
-    Widget build(BuildContext context) {
-      return GetBuilder<ThemeController>(
-        builder: (_) => Scaffold(
-          body: Text(
-            '我是Drama页',
-            style: TextStyle(fontSize: 30.0),
-          ),
-        ),
-      );
-    }
+  Widget build(BuildContext context) {
+    return GetBuilder<ThemeController>(
+      builder: (_) => Scaffold(
+        body: Center(
+            child: Text(
+          '我是Drama页',
+          style: TextStyle(fontSize: 30.0),
+        )),
+      ),
+    );
+  }
 
   @override
   void dispose() {
