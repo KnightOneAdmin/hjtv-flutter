@@ -5,6 +5,7 @@ import 'package:hjtv_flutter/pages/home/home_logic.dart';
 import 'package:hjtv_flutter/pages/korean_drama/korean_drama_view.dart';
 import 'package:hjtv_flutter/pages/recommend/recommend_view.dart';
 import 'package:hjtv_flutter/pages/star/star_view.dart';
+import 'package:hjtv_flutter/routes/routes.dart';
 import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';
 import 'package:hjtv_flutter/widget/platform_scaffold.dart';
@@ -57,7 +58,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ThemeController>(
@@ -89,7 +89,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       )));
                 }).toList(),
               )),
-              trailing: Icon(Icons.search, color: ThemeUtils.bgColor),
+              trailing: GestureDetector(
+                child: Icon(Icons.search, color: ThemeUtils.bgColor),
+                onTap: () {
+                  Routes.toNamed(Routes.SEARCH);
+                },
+              ),
               body: TabBarView(
                 controller: _tabController,
                 physics: NeverScrollableScrollPhysics(),

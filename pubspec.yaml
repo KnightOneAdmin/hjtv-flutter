@@ -51,6 +51,9 @@ dependencies:
   rxdart: ^0.27.1
   extended_image: ^4.1.0
 
+  flutter_star: ^1.0.2
+  flutter_swiper_null_safety: ^1.0.2
+
   flutter_localizations:
     sdk: flutter #国际化组件
 

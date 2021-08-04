@@ -59,28 +59,28 @@ Widget CachedNetworkImageUtils(String? imageUrl,{double? width,double? height,Bo
    }
 }
 
-// 把图片ByteData写入File，并触发微信分享
-Future<File?> CreateShareImage(GlobalKey repaintWidgetKey ) async {
-
-  ByteData? sourceByteData = await _capturePngToByteData(repaintWidgetKey);
-  if(sourceByteData == null){
-    return null;
-  }
-  Uint8List sourceBytes = sourceByteData.buffer.asUint8List();
-  Directory tempDir = await getTemporaryDirectory();
-
-  String storagePath = tempDir.path;
-  final tag = DateTime.now().millisecondsSinceEpoch;
-  File file = new File('$storagePath/$tag.JPEG');
-
-  if (!file.existsSync()) {
-    file.createSync();
-  }
-  file.writeAsBytesSync(sourceBytes);
-
-  return file;
-
-}
+// // 把图片ByteData写入File，并触发微信分享
+// Future<File?> CreateShareImage(GlobalKey repaintWidgetKey ) async {
+//
+//   ByteData? sourceByteData = await _capturePngToByteData(repaintWidgetKey);
+//   if(sourceByteData == null){
+//     return null;
+//   }
+//   Uint8List sourceBytes = sourceByteData.buffer.asUint8List();
+//   Directory tempDir = await getTemporaryDirectory();
+//
+//   String storagePath = tempDir.path;
+//   final tag = DateTime.now().millisecondsSinceEpoch;
+//   File file = new File('$storagePath/$tag.JPEG');
+//
+//   if (!file.existsSync()) {
+//     file.createSync();
+//   }
+//   file.writeAsBytesSync(sourceBytes);
+//
+//   return file;
+//
+// }
 
 Future<ByteData?> _capturePngToByteData(GlobalKey repaintWidgetKey) async {
   try {

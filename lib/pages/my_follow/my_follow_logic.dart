@@ -1,10 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
-import 'recommend_state.dart';
+import 'my_follow_state.dart';
 
-class RecommendLogic extends GetxController {
-  final state = RecommendState();
+class MyFollowLogic extends GetxController {
+  final state = MyFollowState();
+
   @override
   void onReady() {
     // TODO: implement onReady

@@ -81,8 +81,8 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
         body: Column(
           children: [
             _buildTopWeiget(context),
-            _buildBodyWidget(),
-            _buildBodyWidget1()
+            _buildBodyWidgetBar(),
+            _buildBodyWidget()
           ],
         ),
       ),
@@ -205,7 +205,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
         duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  _buildBodyWidget() {
+  _buildBodyWidgetBar() {
     return TabBar(
       controller: _tabController,
       onTap: _changeTab,
@@ -229,7 +229,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
     );
   }
 
-  _buildBodyWidget1() {
+  _buildBodyWidget() {
     return Expanded(
         child: TabBarView(
       controller: _tabController,

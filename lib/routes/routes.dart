@@ -9,6 +9,12 @@ abstract class Routes{
   static const String FIND = "/find";
   static const String DRAMA = "/drama";
   static const String MOVIE_DETAIS = "/movie_detais";
+  static const String SEARCH = "/search";
+  static const String TODAY_RECOMMEND = "/today_recommend";
+  static const String FILM_REPO = "/film_repo";
+  static const String RANKING = "/ranking";
+  static const String MY_FOLLOW = "/my_follow";
+  static const String DRAMA_SHORTAGE = "/drama_shortage";
 
   static get arguments => Get.arguments;
 

@@ -1,6 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hjtv_flutter/pages/star/modles/star_modle.dart';
 import 'package:hjtv_flutter/routes/routes.dart';
 import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';
@@ -25,21 +26,24 @@ class _StarPageState extends State<StarPage> {
           child: Column(
             children: <Widget>[
               ImageUtils('list_head_bg', fit: BoxFit.cover),
-              Expanded(
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 300 / 476),
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Routes.toNamed(Routes.MOVIE_DETAIS);
-                      },
-                      child: buildItemView(context, index),
-                    );
-                  },
-                  itemCount: 40,
-                ),
-              )
+              Obx(() {
+                return Expanded(
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3, childAspectRatio: 300 / 476),
+                    itemBuilder: (context, index) {
+                      final item = logic.list[index];
+                      return InkWell(
+                        onTap: () {
+                          Routes.toNamed(Routes.MOVIE_DETAIS);
+                        },
+                        child: buildItemView(context, item),
+                      );
+                    },
+                    itemCount: logic.list.length,
+                  ),
+                );
+              })
             ],
           ),
         );
@@ -47,7 +51,7 @@ class _StarPageState extends State<StarPage> {
     );
   }
 
-  Widget buildItemView(BuildContext context, int index) {
+  Widget buildItemView(BuildContext context, SeriesList item) {
     return Container(
       margin: EdgeInsets.all(4.w),
       child: Column(
@@ -59,9 +63,7 @@ class _StarPageState extends State<StarPage> {
                   child: AspectRatio(
                       aspectRatio: 300 / 429,
                       child: ExtendedImage.network(
-                        index % 2 == 1
-                            ? "https://images.pexels.com/photos/8774500/pexels-photo-8774500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                            : "https://images.pexels.com/photos/6128302/pexels-photo-6128302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        item.thumb!,
                         retries: 0,
                         fit: BoxFit.cover,
                       ))),
@@ -74,7 +76,7 @@ class _StarPageState extends State<StarPage> {
                       Padding(
                           padding: EdgeInsets.only(left: 4.w),
                           child: Text(
-                            "${index % 2 == 1 ? "更新至20集" : "16集全"}",
+                            "${item.memo != null ? item.memo : 0}",
                             style: ThemeUtils.body_start_item_left_14,
                           )),
                       Expanded(
@@ -83,7 +85,7 @@ class _StarPageState extends State<StarPage> {
                       ),
                       Padding(
                           padding: EdgeInsets.only(right: 4.w),
-                          child: Text("${index % 2 == 1 ? "8.0" : "9.5"}",
+                          child: Text("${item.rank! / 10}",
                               style: ThemeUtils.body_start_item_right_14)),
                     ],
                   )),
@@ -102,7 +104,7 @@ class _StarPageState extends State<StarPage> {
               )
             ],
           ),
-          Text("${index % 2 == 1 ? "就这么看着你" : "海滩冲浪"}")
+          Text("${item.name}",maxLines: 1,overflow: TextOverflow.ellipsis,)
         ],
       ),
     );

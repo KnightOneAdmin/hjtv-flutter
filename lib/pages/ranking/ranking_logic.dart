@@ -1,10 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
-import 'recommend_state.dart';
+import 'ranking_state.dart';
 
-class RecommendLogic extends GetxController {
-  final state = RecommendState();
+class RankingLogic extends GetxController {
+  final state = RankingState();
+
   @override
   void onReady() {
     // TODO: implement onReady
