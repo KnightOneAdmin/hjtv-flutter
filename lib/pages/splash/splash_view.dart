@@ -20,15 +20,15 @@ class _SplashPageState extends State<SplashPage> {
     return GetBuilder<ThemeController>(
       builder: (_) => Scaffold(
           body: Column(
-        children: <Widget>[
-          Expanded(flex: 1, child: _buildSplashView()),
-          Container(
-            width: double.infinity,
-            color: Colors.white,
-            height: 180.w,
-            child: Center(
-              child:
-                  ImageUtils('splash_bottom_logo', width: 160.w, height: 56.w),
+              children: <Widget>[
+              Expanded(flex: 1, child: _buildSplashView()),
+              Container(
+                width: double.infinity,
+                color: Colors.white,
+                height: 180.w,
+                child: Center(
+                  child:
+                      ImageUtils('splash_bottom_logo', width: 160.w, height: 56.w),
             ),
           ),
         ],

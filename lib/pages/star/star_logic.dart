@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hjtv_flutter/pages/star/data/star_provider.dart';
-import 'package:hjtv_flutter/pages/star/modles/star_modle.dart';
+import 'package:hjtv_flutter/pages/star/models/star_model.dart';
 
 class StarLogic extends GetxController {
   String url =
@@ -9,7 +9,7 @@ class StarLogic extends GetxController {
 
   @override
   void onReady() {
-    getStarVoideList();
+    getStarVoidList();
     super.onReady();
   }
 
@@ -18,8 +18,8 @@ class StarLogic extends GetxController {
     super.onClose();
   }
 
-  void getStarVoideList() async {
-    await StarProvider.getBusnessList<StarModle>(url).then((value) {
+  void getStarVoidList() async {
+    await StarProvider.getBusinessList<StarModel>(url).then((value) {
       if (value != null) {
         if (value.seriesList!.isNotEmpty) {
           list.addAll(value.seriesList!);

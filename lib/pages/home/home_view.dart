@@ -10,6 +10,7 @@ import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';
 import 'package:hjtv_flutter/widget/platform_scaffold.dart';
 import 'package:hjtv_flutter/widget/tab_under_indicator.dart';
+import 'package:hjtv_flutter/pages/home/models/home_model.dart';
 
 class HomePage extends StatefulWidget {
   @override

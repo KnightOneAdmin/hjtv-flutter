@@ -1,7 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hjtv_flutter/pages/star/modles/star_modle.dart';
+import 'package:hjtv_flutter/pages/star/models/star_model.dart';
 import 'package:hjtv_flutter/routes/routes.dart';
 import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';

@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-StarModle starModleFromJson(String str) => StarModle.fromJson(json.decode(str));
+StarModel starModelFromJson(String str) => StarModel.fromJson(json.decode(str));
 
-String starModleToJson(StarModle data) => json.encode(data.toJson());
+String starModelToJson(StarModel data) => json.encode(data.toJson());
 
-class StarModle {
-  StarModle({
+class StarModel {
+  StarModel({
     this.rescode = 0,
     this.ts,
     this.seriesList,
@@ -21,7 +21,7 @@ class StarModle {
   int more;
   AlbumCfg? albumCfg;
 
-  factory StarModle.fromJson(Map<String, dynamic> json) => StarModle(
+  factory StarModel.fromJson(Map<String, dynamic> json) => StarModel(
         rescode: json["rescode"] == null ? null : json["rescode"],
         ts: json["ts"] == null ? null : json["ts"],
         seriesList: json["seriesList"] == null
