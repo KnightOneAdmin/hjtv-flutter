@@ -10,6 +10,7 @@ import 'package:hjtv_flutter/theme/theme_controller.dart';
 import 'package:hjtv_flutter/theme/theme_utils.dart';
 import 'package:hjtv_flutter/utils/image_utils.dart';
 
+import 'models/recommend_model.dart';
 import 'recommend_logic.dart';
 
 class RecommendPage extends StatefulWidget {
@@ -18,13 +19,13 @@ class RecommendPage extends StatefulWidget {
 }
 
 class _RecommendPageState extends State<RecommendPage> {
-  final logic = Get.put(RecommendLogic);
+  final logic = Get.put(RecommendLogic());
 
-  List _listImage = [
-    "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "https://images.pexels.com/photos/7031600/pexels-photo-7031600.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "https://images.pexels.com/photos/825904/pexels-photo-825904.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  ];
+  // List _listImage = [
+  //   "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  //   "https://images.pexels.com/photos/7031600/pexels-photo-7031600.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  //   "https://images.pexels.com/photos/825904/pexels-photo-825904.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -53,17 +54,21 @@ class _RecommendPageState extends State<RecommendPage> {
                             left: 12.w, top: 4.w, bottom: 12.w, right: 12.w),
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(10.w),
-                            child: Swiper(
-                              itemCount: _listImage.length,
+                            child: Obx(()
+                            => Swiper(
+                              itemCount: logic.listBanner.length,
                               autoplay: true,
                               itemBuilder: (BuildContext context, int index) {
                                 return ExtendedImage.network(
-                                  _listImage[index],
+                                  logic.listBanner[index].thumb!,
                                   fit: BoxFit.cover,
                                 );
                               },
-                              pagination: SwiperPagination(builder: SwiperPagination.fraction,alignment: Alignment.bottomRight),
+                              pagination: SwiperPagination(
+                                  builder: SwiperPagination.fraction,
+                                  alignment: Alignment.bottomRight),
                             )),
+                            ),
                       )),
                 ],
               ),
@@ -139,23 +144,25 @@ class _RecommendPageState extends State<RecommendPage> {
 
   _buildBodyWidget() {
     return Expanded(
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 1.3),
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              Routes.toNamed(Routes.MOVIE_DETAIS);
-            },
-            child: _buildItemView(context, index),
-          );
-        },
-        itemCount: 40,
-      ),
+      child: Obx(()
+       => GridView.builder(
+         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+             crossAxisCount: 2, childAspectRatio: 1.3),
+         itemBuilder: (context, index) {
+           final item = logic.listRecommend[index];
+           return InkWell(
+             onTap: () {
+               Routes.toNamed(Routes.MOVIE_DETAIS);
+             },
+             child: _buildRecommendItemView(context, item),
+           );
+         },
+         itemCount: logic.listRecommend.length,
+       )),
     );
   }
 
-  _buildItemView(BuildContext context, int index) {
+  _buildRecommendItemView(BuildContext context, ItemModel item) {
     return Container(
       margin: EdgeInsets.all(4.w),
       child: Column(
@@ -167,9 +174,7 @@ class _RecommendPageState extends State<RecommendPage> {
                   child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: ExtendedImage.network(
-                        index % 2 == 1
-                            ? "https://images.pexels.com/photos/8774500/pexels-photo-8774500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                            : "https://images.pexels.com/photos/6128302/pexels-photo-6128302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        item.thumb!,
                         retries: 0,
                         fit: BoxFit.cover,
                       ))),
@@ -179,13 +184,19 @@ class _RecommendPageState extends State<RecommendPage> {
                   right: 0,
                   child: Row(
                     children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 4.w),
+                          child: Text(
+                            "${item.memo != null ? item.memo : 0}",
+                            style: ThemeUtils.body_start_item_left_14,
+                          )),
                       Expanded(
                         flex: 1,
                         child: SizedBox(),
                       ),
                       Padding(
                           padding: EdgeInsets.only(right: 4.w),
-                          child: Text("${index % 2 == 1 ? "8.0" : "9.5"}",
+                          child: Text("${item.rank! / 10}",
                               style: ThemeUtils.body_start_item_right_14)),
                     ],
                   )),
@@ -204,7 +215,11 @@ class _RecommendPageState extends State<RecommendPage> {
               )
             ],
           ),
-          Text("${index % 2 == 1 ? "就这么看着你" : "海滩冲浪"}")
+          Text(
+            "${item.name}",
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          )
         ],
       ),
     );

@@ -1,0 +1,473 @@
+{
+  "rescode": 0,
+  "ab415": "f0",
+  "ts": 1628512193107,
+  "recs": [
+    {
+      "type": 1,
+      "title": "热门韩剧",
+      "items": [
+        {
+          "sid": "NbKX6GiG00nOelXzQ83j",
+          "name": "心惊肉跳的同居",
+          "rank": 81,
+          "isFinished": true,
+          "publishTime": 1621958400000,
+          "intro": "",
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/Fhq6O8ocHSCFK8QWURsw7AiB7QPq.jpg?imageView2/2/w/400/interlace/1",
+          "poster": "http://res.hanju.koudaibaobao.com/hj_res/FlQx6pb2FJzB_HOZMnE-DHqCeVlr.jpg?imageView2/2/w/800/interlace/1",
+          "posterThumb": "http://res.hanju.koudaibaobao.com/hj_res/FlQx6pb2FJzB_HOZMnE-DHqCeVlr.jpg?imageView2/2/w/600/interlace/1",
+          "count": 16,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        },
+        {
+          "sid": "13GuheTDQorK0GfRS5pD8",
+          "name": "机智的医生生活2",
+          "rank": 98,
+          "isFinished": false,
+          "publishTime": 1623859200000,
+          "intro": "",
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/Fjg0YGxkW83TvUzF774cyVIzbK6A.jpg?imageView2/2/w/400/interlace/1",
+          "poster": "http://res.hanju.koudaibaobao.com/hj_res/FpJCzgpGwx7HuRrShKdEM5_gfMUn.jpg?imageView2/2/w/800/interlace/1",
+          "posterThumb": "http://res.hanju.koudaibaobao.com/hj_res/FpJCzgpGwx7HuRrShKdEM5_gfMUn.jpg?imageView2/2/w/600/interlace/1",
+          "count": 7,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        },
+        {
+          "sid": "INmbeN6ifRC2oJ1NGcmM",
+          "name": "某天灭亡走进我家门",
+          "rank": 81,
+          "isFinished": true,
+          "publishTime": 1620576000000,
+          "intro": "",
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/FlayM63ei7spmntJu6kgK8_BsXf-.jpg?imageView2/2/w/400/interlace/1",
+          "poster": "http://res.hanju.koudaibaobao.com/hj_res/Fhlmo8OFweQixofZC-a2NgucLxwD.jpg?imageView2/2/w/800/interlace/1",
+          "posterThumb": "http://res.hanju.koudaibaobao.com/hj_res/Fhlmo8OFweQixofZC-a2NgucLxwD.jpg?imageView2/2/w/600/interlace/1",
+          "count": 16,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        },
+        {
+          "sid": "xgMqTmCuXODvVCAndeHZ",
+          "name": "窥探/Mouse",
+          "rank": 89,
+          "isFinished": true,
+          "publishTime": 1614700800000,
+          "intro": "",
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/FsxjKwvTeCzElKDSWNc06GVPQcpD.jpg?imageView2/2/w/400/interlace/1",
+          "poster": "http://res.hanju.koudaibaobao.com/hj_res/Fs2zmYvlwci7nSNNjAyhPdHBBhWX.jpg?imageView2/2/w/800/interlace/1",
+          "posterThumb": "http://res.hanju.koudaibaobao.com/hj_res/Fs2zmYvlwci7nSNNjAyhPdHBBhWX.jpg?imageView2/2/w/600/interlace/1",
+          "count": 20,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        },
+        {
+          "sid": "6qNSQQZwFO14ynMyg8rvH",
+          "name": "致郁生日",
+          "rank": 83,
+          "isFinished": false,
+          "publishTime": 1626969600000,
+          "intro": "",
+          "thumb": "https://hjres.koudaibaobao.com/hj_res/Fli3DNfQRsAjqbWdnf0pfBOBfUGo.jpg",
+          "poster": "https://hjres.koudaibaobao.com/hj_res/FnQnK8vzSCDwFyQyGIdPx945cbUB.jpg",
+          "posterThumb": "https://hjres.koudaibaobao.com/hj_res/FnQnK8vzSCDwFyQyGIdPx945cbUB.jpg",
+          "count": 6,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        },
+        {
+          "sid": "YbQTgUUBx2111VyNYZ4jc",
+          "name": "Mine",
+          "rank": 78,
+          "isFinished": true,
+          "publishTime": 1620489600000,
+          "intro": "",
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/FvecJUhPHQ-QHiDyUwSfm-DLbdi9.jpg?imageView2/2/w/400/interlace/1",
+          "poster": "http://res.hanju.koudaibaobao.com/hj_res/FpP6-iCsTHy1C6k_Fev9wZj_1cCq.jpg?imageView2/2/w/800/interlace/1",
+          "posterThumb": "http://res.hanju.koudaibaobao.com/hj_res/FpP6-iCsTHy1C6k_Fev9wZj_1cCq.jpg?imageView2/2/w/600/interlace/1",
+          "count": 16,
+          "source": "网络",
+          "category": 1,
+          "isPreview": false,
+          "scopeQualities": [
+            {
+              "name": "蓝光",
+              "resolution": "1080P",
+              "value": 10,
+              "vtype": 1
+            },
+            {
+              "name": "高清",
+              "resolution": "720P",
+              "value": 2,
+              "vtype": 0
+            },
+            {
+              "name": "标清",
+              "resolution": "480P",
+              "value": 1,
+              "vtype": 0
+            }
+          ]
+        }
+      ],
+      "danmu": 1
+    },
+    {
+      "type": 5,
+      "title": "今日推荐",
+      "items": [
+        {
+          "vid": 14268821,
+          "gvid": "1_d9F0o9Fp1J",
+          "title": "【INFINITE】向往的大海  (又名大叔甜心圭受宠记 东雨和优铉有客串)",
+          "sources": [
+            {
+              "page": "http://www.bilibili.com/video/av6922069",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://i0.hdslb.com/bfs/archive/cc4abc5e4a61a4b7d8b150b17c5049c6e966326e.png",
+          "intro": "联合字幕组 又名大叔甜心圭受宠记  南花和天使二哥有为圭哥去应援哦",
+          "length": 0,
+          "publishTime": 1579418550000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 1,
+          "actType": 1,
+          "copyright": 2
+        },
+        {
+          "vid": 14268820,
+          "gvid": "1_S1Aug2BGZM",
+          "title": "【快乐的家】Eco Village-快乐的家 嘉宾： 金炳万 方敏雅 李旼赫 等（完结）",
+          "sources": [
+            {
+              "page": "http://www.bilibili.com/video/av12832748",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://i0.hdslb.com/bfs/archive/75293727cc2c7e5338280f4966fdd1da08355c83.jpg",
+          "intro": "cr：小区字幕组\n不妥删 Eco Village-快乐的家.嘉宾：金炳万 方敏雅 李旼赫 张东民 郑糠云 李在龙 宋昌义等",
+          "length": 0,
+          "publishTime": 1579418550000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 1,
+          "actType": 1,
+          "copyright": 2
+        },
+        {
+          "vid": 14653631,
+          "gvid": "2_MADQVP4buR",
+          "title": "【那个男人的记忆法】为了救最要好的闺蜜，自己却...再也不能跳芭蕾了",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/9ZAtoJgwIOJHQUeKyya6l8gb_W0Byq.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_vsample/Bz8phKDyDb6p7NSY7th2W4Bnbu2Txv_000003.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "",
+          "length": 40,
+          "publishTime": 1628421067000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14654171,
+          "gvid": "2_3vs32nCx4y",
+          "title": "【致美丽的我们】男主故做高冷其实是个小傲娇 两人太甜了！",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/SMyLRAWyKjXxeIHirCIc9ftXyDTqxK.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_res/FjPJq0pw5677wGCb3OtJ2haqaOW_.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "",
+          "length": 23,
+          "publishTime": 1628475592000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14652121,
+          "gvid": "2_ufj3JaW7Iw",
+          "title": "经常追剧有颈椎病不说还长了富贵包，每天按按，富贵包消了，颈椎也舒服了，真好，追剧追剧",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/TnrE_zacH2oN0eEYDDJxlrTYZK9y2G.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_avthumb/FgwVGrvYUvnmnHUNnS_uSJpXEqHu.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "爱好韩剧的美美",
+          "length": 16,
+          "publishTime": 1628322913000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14652453,
+          "gvid": "2_ByWTiDSmox",
+          "title": "张鹤伦：德云众角拼的是“寿命”",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/ygbnrC3bUXZ2DSD06RgZVnaBw1n2ve.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_vsample/3rrZ5_Yy2RsRB8aLc6zikFuHtk64Di_000001.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "德云社众角儿们不单单是爱钱，更是为钱而拼命",
+          "length": 29,
+          "publishTime": 1628381399000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14654909,
+          "gvid": "2_0kYZmoH9zC",
+          "title": "【IU💜翎颖】你做你的星，我做你的追光者",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/f3V1HGyCfF1KgNYDmqG6Ajwj1eEaOV.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_avthumb/FnradZ0COOv2-3CMkzCIIgbeABQY.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "",
+          "length": 14,
+          "publishTime": 1628494546000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14654503,
+          "gvid": "2_IbcVfvJveW",
+          "title": "神颜朴志训\n我是只属于may的帕击昏！！",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/ezOpqQFy9NQZyS8WaKVafqle8JHLjj.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_avthumb/FrxJGJCXy3DLaJXL0jldE8tGMJKx.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "",
+          "length": 23,
+          "publishTime": 1628487057000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14652395,
+          "gvid": "2__Jk5MD5CrO",
+          "title": "【韩式大米糕】你见过这种做法的大米糕吗？居然要用叶子包着蒸。",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/pi1VH8z0gl4AmukDO4Q916FQt2yp8i.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_avthumb/Fl0CAOvjOzMlzkLv59E5ewT1k5eB.1628302038804image?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "你见过这种做法的大米糕吗？居然要用叶子包着蒸。",
+          "length": 38,
+          "publishTime": 1628349446000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        },
+        {
+          "vid": 14653520,
+          "gvid": "2_ywbm0LuA9M",
+          "title": "【樊振东】“你永远可以相信国家队的实力”",
+          "sources": [
+            {
+              "page": "http://svv.cdn.51touxiang.com/hj_video/bCnszMwE3Meyea38k47jVkqjZKMUb3.mp4",
+              "offset": 0,
+              "skip": 0,
+              "prior": 0
+            }
+          ],
+          "thumb": "http://res.hanju.koudaibaobao.com/hj_avthumb/FvLnK-UtBNRmXl2rsTdLDQu4Njdf.jpg?imageView2/1/w/960/h/540/interlace/1",
+          "intro": "",
+          "length": 201,
+          "publishTime": 1628417210000,
+          "playCount": 0,
+          "danmuCount": 0,
+          "likeCount": 0,
+          "postCount": 0,
+          "videoType": 0,
+          "actType": 1,
+          "copyright": 1
+        }
+      ],
+      "danmu": 1
+    }
+  ],
+  "ab400": "g2",
+  "feed": 0
+}
