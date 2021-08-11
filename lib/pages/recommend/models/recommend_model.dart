@@ -1,90 +1,102 @@
 import 'dart:convert';
 
-RecommendModel recommendFromJson(String str) => RecommendModel.fromJson(json.decode(str));
+Recomment recommentFromJson(String str) => Recomment.fromJson(json.decode(str));
 
-String recommendToJson(RecommendModel data) => json.encode(data.toJson());
+String recommentToJson(Recomment data) => json.encode(data.toJson());
 
-
-class RecommendModel {
-  RecommendModel({
+class Recomment {
+  Recomment({
     this.rescode = 0,
     this.ab415,
-    this.ts,
-    this.recsList,
+    this.ts = 0,
+    required this.recs,
     this.ab400,
-    this.feed = 0
+    this.feed,
   });
 
-  int? rescode;
+  int rescode;
   String? ab415;
-  int? ts;
-  List<RecsModel>? recsList;
+  int ts;
+  List<Rec> recs;
   String? ab400;
   int? feed;
 
-  factory RecommendModel.fromJson(Map<String, dynamic> json) => RecommendModel(
-    rescode: json["rescode"] == null ? null : json["rescode"],
+  factory Recomment.fromJson(Map<String, dynamic> json) => Recomment(
+    rescode: json["rescode"] == null ? 0 : json["rescode"],
     ab415: json["ab415"] == null ? null : json["ab415"],
     ts: json["ts"] == null ? null : json["ts"],
-    recsList: json["recs"] == null ? null : List<RecsModel>.from(
-        json["recs"].map((x) => RecsModel.fromJson(x))),
+    recs: json["recs"] == null
+        ? []
+        : List<Rec>.from(json["recs"].map((x) => Rec.fromJson(x))),
     ab400: json["ab400"] == null ? null : json["ab400"],
     feed: json["feed"] == null ? null : json["feed"],
   );
 
-  Map<String, dynamic> toJson() =>
-      {
-        "rescode": rescode == null ? null : rescode,
-        "ab415": ab415 == null ? null : ab415,
-        "ts": ts == null ? null : ts,
-        "recs": recsList == null ? null : List<dynamic>.from(
-            recsList!.map((x) => x.toJson())),
-        "ab400": ab400 == null ? null : ab400,
-        "feed": feed == null ? null : feed,
-      };
+  Map<String, dynamic> toJson() => {
+    "rescode": rescode == null ? null : rescode,
+    "ab415": ab415 == null ? null : ab415,
+    "ts": ts == null ? null : ts,
+    "recs": recs == null
+        ? null
+        : List<dynamic>.from(recs.map((x) => x.toJson())),
+    "ab400": ab400 == null ? null : ab400,
+    "feed": feed == null ? null : feed,
+  };
 }
 
-class RecsModel {
-  RecsModel({
-    this.type,
-    this.title,
-    this.items,
-    this.danmu = 1,
+class Rec {
+  Rec({
+    this.type = 0,
+    this.title = '',
+    required this.items,
+    this.danmu = 0,
   });
 
   int? type;
   String? title;
-  List<ItemModel>? items;
-  int? danmu;
+  List<Item> items;
+  int danmu;
 
-  factory RecsModel.fromJson(Map<String, dynamic> json) => RecsModel(
+  factory Rec.fromJson(Map<String, dynamic> json) => Rec(
     type: json["type"] == null ? null : json["type"],
     title: json["title"] == null ? null : json["title"],
-    items: json["items"] == null ? null : List<ItemModel>.from(
-        json["items"].map((x) => ItemModel.fromJson(x))),
+    items: json["items"] == null
+        ? []
+        : List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
     danmu: json["danmu"] == null ? null : json["danmu"],
   );
 
-  Map<String, dynamic> toJson() =>
-      {
-        "type": type == null ? null : type,
-        "title": title == null ? null : title,
-        "items": items == null ? null : List<dynamic>.from(
-            items!.map((x) => x.toJson())),
-        "danmu": danmu == null ? null : danmu,
-      };
+  Map<String, dynamic> toJson() => {
+    "type": type == null ? null : type,
+    "title": title == null ? null : title,
+    "items": items == null
+        ? []
+        : List<dynamic>.from(items.map((x) => x.toJson())),
+    "danmu": danmu == null ? 0 : danmu,
+  };
 }
 
-class ItemModel {
-  ItemModel({
+class Item {
+  Item({
+    this.sid,
+    this.name,
+    this.rank,
+    this.isFinished,
+    this.publishTime,
+    this.intro,
+    this.thumb='',
+    this.poster,
+    this.posterThumb,
+    this.count,
+    this.source,
+    this.category,
+    this.isPreview,
+    required this.scopeQualities,
     this.vid,
     this.gvid,
     this.title,
-    this.sources,
-    this.thumb,
-    this.intro,
+    required this.sources,
     this.length,
-    this.publishTime,
     this.playCount,
     this.danmuCount,
     this.likeCount,
@@ -92,33 +104,27 @@ class ItemModel {
     this.videoType,
     this.actType,
     this.copyright,
-    this.sid,
-    this.name,
-    this.rank,
-    this.isFinished,
-    // this.publishTime,
-    // this.intro,
-    // this.thumb,
-    this.poster,
-    this.posterThumb,
-    this.count,
-    this.source,
-    this.category,
-    this.isPreview,
-    this.shorthand,
-    this.crew,
-    this.scopeQualities,
-    this.memo,
   });
 
+  String? sid;
+  String? name;
+  int? rank;
+  bool? isFinished;
+  int? publishTime;
+  String? intro;
+  String thumb;
+  String? poster;
+  String? posterThumb;
+  int? count;
+  String? source;
+  int? category;
+  bool? isPreview;
+  List<ScopeQuality> scopeQualities;
   int? vid;
   String? gvid;
   String? title;
-  List<SourceList>? sources;
-  String? thumb;
-  String? intro;
+  List<Source> sources;
   int? length;
-  int? publishTime;
   int? playCount;
   int? danmuCount;
   int? likeCount;
@@ -127,34 +133,31 @@ class ItemModel {
   int? actType;
   int? copyright;
 
-  String? sid;
-  String? name;
-  int? rank;
-  bool? isFinished = false;
-  // int? publishTime;
-  // String? intro;
-  // String? thumb;
-  String? poster;
-  String? posterThumb;
-  int? count;
-  Source? source;
-  int? category;
-  bool? isPreview;
-  String? shorthand;
-  String? crew;
-  List<ScopeQuality>? scopeQualities;
-  String? memo;
-
-  factory ItemModel.fromJson(Map<String, dynamic> json) => ItemModel(
+  factory Item.fromJson(Map<String, dynamic> json) => Item(
+    sid: json["sid"] == null ? null : json["sid"],
+    name: json["name"] == null ? '' : json["name"],
+    rank: json["rank"] == null ? 0 : json["rank"],
+    isFinished: json["isFinished"] == null ? false : json["isFinished"],
+    publishTime: json["publishTime"] == null ? 0 : json["publishTime"],
+    intro: json["intro"] == null ? null : json["intro"],
+    thumb: json["thumb"] == null ? '' : json["thumb"],
+    poster: json["poster"] == null ? null : json["poster"],
+    posterThumb: json["posterThumb"] == null ? null : json["posterThumb"],
+    count: json["count"] == null ? null : json["count"],
+    source: json["source"] == null ? null : json["source"],
+    category: json["category"] == null ? null : json["category"],
+    isPreview: json["isPreview"] == null ? null : json["isPreview"],
+    scopeQualities: json["scopeQualities"] == null
+        ? []
+        : List<ScopeQuality>.from(
+        json["scopeQualities"].map((x) => ScopeQuality.fromJson(x))),
     vid: json["vid"] == null ? null : json["vid"],
     gvid: json["gvid"] == null ? null : json["gvid"],
     title: json["title"] == null ? null : json["title"],
-    sources: json["sources"] == null ? null : List<SourceList>.from(
-        json["sources"].map((x) => SourceList.fromJson(x))),
-    thumb: json["thumb"] == null ? null : json["thumb"],
-    intro: json["intro"] == null ? null : json["intro"],
+    sources: json["sources"] == null
+        ? []
+        : List<Source>.from(json["sources"].map((x) => Source.fromJson(x))),
     length: json["length"] == null ? null : json["length"],
-    publishTime: json["publishTime"] == null ? null : json["publishTime"],
     playCount: json["playCount"] == null ? null : json["playCount"],
     danmuCount: json["danmuCount"] == null ? null : json["danmuCount"],
     likeCount: json["likeCount"] == null ? null : json["likeCount"],
@@ -162,39 +165,32 @@ class ItemModel {
     videoType: json["videoType"] == null ? null : json["videoType"],
     actType: json["actType"] == null ? null : json["actType"],
     copyright: json["copyright"] == null ? null : json["copyright"],
-    sid: json["sid"] == null ? null : json["sid"],
-    name: json["name"] == null ? null : json["name"],
-    rank: json["rank"] == null ? null : json["rank"],
-    isFinished: json["isFinished"] == null ? null : json["isFinished"],
-    // publishTime: json["publishTime"] == null ? null : json["publishTime"],
-    // intro: json["intro"] == null ? null : json["intro"],
-    // thumb: json["thumb"] == null ? null : json["thumb"],
-    poster: json["poster"] == null ? null : json["poster"],
-    posterThumb: json["posterThumb"] == null ? null : json["posterThumb"],
-    count: json["count"] == null ? null : json["count"],
-    source:
-    json["source"] == null ? null : sourceValues.map[json["source"]],
-    category: json["category"] == null ? null : json["category"],
-    isPreview: json["isPreview"] == null ? null : json["isPreview"],
-    shorthand: json["shorthand"] == null ? null : json["shorthand"],
-    crew: json["crew"] == null ? null : json["crew"],
-    scopeQualities: json["scopeQualities"] == null
-        ? null
-        : List<ScopeQuality>.from(
-        json["scopeQualities"].map((x) => ScopeQuality.fromJson(x))),
-    memo: json["memo"] == null ? null : json["memo"],
   );
 
   Map<String, dynamic> toJson() => {
+    "sid": sid == null ? null : sid,
+    "name": name == null ? null : name,
+    "rank": rank == null ? null : rank,
+    "isFinished": isFinished == null ? null : isFinished,
+    "publishTime": publishTime == null ? null : publishTime,
+    "intro": intro == null ? null : intro,
+    "thumb": thumb == null ? '' : thumb,
+    "poster": poster == null ? null : poster,
+    "posterThumb": posterThumb == null ? null : posterThumb,
+    "count": count == null ? null : count,
+    "source": source == null ? null : source,
+    "category": category == null ? null : category,
+    "isPreview": isPreview == null ? null : isPreview,
+    "scopeQualities": scopeQualities == null
+        ? null
+        : List<dynamic>.from(scopeQualities.map((x) => x.toJson())),
     "vid": vid == null ? null : vid,
     "gvid": gvid == null ? null : gvid,
     "title": title == null ? null : title,
-    "sources": sources == null ? null : List<dynamic>.from(
-        sources!.map((x) => x.toJson())),
-    "thumb": thumb == null ? null : thumb,
-    "intro": intro == null ? null : intro,
+    "sources": sources == null
+        ? null
+        : List<dynamic>.from(sources.map((x) => x.toJson())),
     "length": length == null ? null : length,
-    "publishTime": publishTime == null ? null : publishTime,
     "playCount": playCount == null ? null : playCount,
     "danmuCount": danmuCount == null ? null : danmuCount,
     "likeCount": likeCount == null ? null : likeCount,
@@ -202,155 +198,21 @@ class ItemModel {
     "videoType": videoType == null ? null : videoType,
     "actType": actType == null ? null : actType,
     "copyright": copyright == null ? null : copyright,
-
-    "sid": sid == null ? null : sid,
-    "name": name == null ? null : name,
-    "rank": rank == null ? null : rank,
-    "isFinished": isFinished == null ? null : isFinished,
-    // "publishTime": publishTime == null ? null : publishTime,
-    // "intro": intro == null ? null : intro,
-    // "thumb": thumb == null ? null : thumb,
-    "poster": poster == null ? null : poster,
-    "posterThumb": posterThumb == null ? null : posterThumb,
-    "count": count == null ? null : count,
-    "source": source == null ? null : sourceValues.reverse[source],
-    "category": category == null ? null : category,
-    "isPreview": isPreview == null ? null : isPreview,
-    "shorthand": shorthand == null ? null : shorthand,
-    "crew": crew == null ? null : crew,
-    "scopeQualities": scopeQualities == null
-        ? null
-        : List<dynamic>.from(scopeQualities!.map((x) => x.toJson())),
-    "memo": memo == null ? null : memo,
-  };
-}
-
-class SourceList {
-  SourceList({
-    this.page,
-    this.offset,
-    this.skip,
-    this.prior,
-  });
-
-  String? page;
-  int? offset;
-  int? skip;
-  int? prior;
-
-  factory SourceList.fromJson(Map<String, dynamic> json) => SourceList(
-    page: json["page"] == null ? null : json["page"],
-    offset: json["offset"] == null ? null : json["offset"],
-    skip: json["skip"] == null ? null : json["skip"],
-    prior: json["page"] == null ? null : json["page"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "page": page == null ? null : page,
-    "offset": offset == null ? null : offset,
-    "skip": skip == null ? null : skip,
-    "prior": prior == null ? null : prior,
-  };
-}
-
-class BannerItemModel {
-  BannerItemModel({
-    this.sid,
-    this.name,
-    this.rank,
-    this.isFinished,
-    this.publishTime,
-    this.intro,
-    this.thumb,
-    this.poster,
-    this.posterThumb,
-    this.count,
-    this.source,
-    this.category,
-    this.isPreview,
-    this.shorthand,
-    this.crew,
-    this.scopeQualities,
-    this.memo,
-  });
-
-  String? sid;
-  String? name;
-  int? rank;
-  bool? isFinished = false;
-  int? publishTime;
-  String? intro;
-  String? thumb;
-  String? poster;
-  String? posterThumb;
-  int? count;
-  Source? source;
-  int? category;
-  bool? isPreview;
-  String? shorthand;
-  String? crew;
-  List<ScopeQuality>? scopeQualities;
-  String? memo;
-
-  factory BannerItemModel.fromJson(Map<String, dynamic> json) => BannerItemModel (
-    sid: json["sid"] == null ? null : json["sid"],
-    name: json["name"] == null ? null : json["name"],
-    rank: json["rank"] == null ? null : json["rank"],
-    isFinished: json["isFinished"] == null ? null : json["isFinished"],
-    publishTime: json["publishTime"] == null ? null : json["publishTime"],
-    intro: json["intro"] == null ? null : json["intro"],
-    thumb: json["thumb"] == null ? null : json["thumb"],
-    poster: json["poster"] == null ? null : json["poster"],
-    posterThumb: json["posterThumb"] == null ? null : json["posterThumb"],
-    count: json["count"] == null ? null : json["count"],
-    source:
-    json["source"] == null ? null : sourceValues.map[json["source"]],
-    category: json["category"] == null ? null : json["category"],
-    isPreview: json["isPreview"] == null ? null : json["isPreview"],
-    shorthand: json["shorthand"] == null ? null : json["shorthand"],
-    crew: json["crew"] == null ? null : json["crew"],
-    scopeQualities: json["scopeQualities"] == null
-        ? null
-        : List<ScopeQuality>.from(
-        json["scopeQualities"].map((x) => ScopeQuality.fromJson(x))),
-    memo: json["memo"] == null ? null : json["memo"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "sid": sid == null ? null : sid,
-    "name": name == null ? null : name,
-    "rank": rank == null ? null : rank,
-    "isFinished": isFinished == null ? null : isFinished,
-    "publishTime": publishTime == null ? null : publishTime,
-    "intro": intro == null ? null : intro,
-    "thumb": thumb == null ? null : thumb,
-    "poster": poster == null ? null : poster,
-    "posterThumb": posterThumb == null ? null : posterThumb,
-    "count": count == null ? null : count,
-    "source": source == null ? null : sourceValues.reverse[source],
-    "category": category == null ? null : category,
-    "isPreview": isPreview == null ? null : isPreview,
-    "shorthand": shorthand == null ? null : shorthand,
-    "crew": crew == null ? null : crew,
-    "scopeQualities": scopeQualities == null
-        ? null
-        : List<dynamic>.from(scopeQualities!.map((x) => x.toJson())),
-    "memo": memo == null ? null : memo,
   };
 }
 
 class ScopeQuality {
   ScopeQuality({
-    this.name,
-    this.resolution,
-    this.value,
-    this.vtype,
+    required this.name,
+    required this.resolution,
+    this.value = 0,
+    this.vtype = 0,
   });
 
   Name? name;
   Resolution? resolution;
-  int? value;
-  int? vtype;
+  int value;
+  int vtype;
 
   factory ScopeQuality.fromJson(Map<String, dynamic> json) => ScopeQuality(
     name: json["name"] == null ? null : nameValues.map[json["name"]],
@@ -370,7 +232,6 @@ class ScopeQuality {
   };
 }
 
-
 enum Name { EMPTY, NAME, PURPLE }
 
 final nameValues =
@@ -384,10 +245,33 @@ final resolutionValues = EnumValues({
   "720P": Resolution.THE_720_P
 });
 
-enum Source { EMPTY, SOURCE, PURPLE }
+class Source {
+  Source({
+    this.page = '',
+    this.offset = 0,
+    this.skip = 0,
+    this.prior = 0,
+  });
 
-final sourceValues =
-EnumValues({"网络": Source.EMPTY, "小玩剧": Source.PURPLE, "百度": Source.SOURCE});
+  String page;
+  int offset;
+  int skip;
+  int prior;
+
+  factory Source.fromJson(Map<String, dynamic> json) => Source(
+    page: json["page"] == null ? '' : json["page"],
+    offset: json["offset"] == null ? 0 : json["offset"],
+    skip: json["skip"] == null ? 0 : json["skip"],
+    prior: json["prior"] == null ? 0 : json["prior"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "page": page == null ? null : page,
+    "offset": offset == null ? null : offset,
+    "skip": skip == null ? null : skip,
+    "prior": prior == null ? null : prior,
+  };
+}
 
 class EnumValues<T> {
   Map<String, T> map;
@@ -402,4 +286,3 @@ class EnumValues<T> {
     return reverseMap;
   }
 }
-

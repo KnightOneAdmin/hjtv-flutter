@@ -8,8 +8,8 @@ class RecommendLogic extends GetxController {
   final state = RecommendState();
   String url =
       "http://api.hanju.koudaibaobao.com/api/index/recommend_v2?_ts=${DateTime.now().microsecondsSinceEpoch}";
-  final listBanner = <ItemModel>[].obs;
-  final listRecommend = <ItemModel>[].obs;
+  final listBanner = <Item>[].obs;
+  final listRecommend = <Item>[].obs;
 
   @override
   void onReady() {
@@ -23,10 +23,10 @@ class RecommendLogic extends GetxController {
   }
 
   void getRecommendDataList() async {
-    await RecommendProvider.getBusinessList<RecommendModel>(url).then((value) {
+    await RecommendProvider.getBusinessList<Recomment>(url).then((value) {
       if (value != null) {
-        if (value.recsList!.isNotEmpty) {
-          value.recsList!.forEach((element) {
+        if (value.recs!.isNotEmpty) {
+          value.recs!.forEach((element) {
             if(element.type == 5) {
               listRecommend.addAll(element.items!);
             } else if (element.type == 1) {

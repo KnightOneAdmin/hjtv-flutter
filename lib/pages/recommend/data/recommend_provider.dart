@@ -6,7 +6,7 @@ class RecommendProvider {
     try {
       return await Dio().get(url).then((response) {
         if(response != null) {
-          return RecommendModel.fromJson(response.data) as T;
+          return Recomment.fromJson(response.data) as T;
         }
       });
     } catch (e) {

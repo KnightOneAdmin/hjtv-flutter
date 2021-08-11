@@ -1,6 +1,5 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
@@ -162,7 +161,7 @@ class _RecommendPageState extends State<RecommendPage> {
     );
   }
 
-  _buildRecommendItemView(BuildContext context, ItemModel item) {
+  _buildRecommendItemView(BuildContext context, Item item) {
     return Container(
       margin: EdgeInsets.all(4.w),
       child: Column(
@@ -187,7 +186,7 @@ class _RecommendPageState extends State<RecommendPage> {
                       Padding(
                           padding: EdgeInsets.only(left: 4.w),
                           child: Text(
-                            "${item.memo != null ? item.memo : 0}",
+                            "${item.name != null ? item.name : 0}",
                             style: ThemeUtils.body_start_item_left_14,
                           )),
                       Expanded(
